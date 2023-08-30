@@ -1,0 +1,81 @@
+﻿
+<body class="background-blur" style="background-image: url('@Url.Content("~/img/biblioteca.jpg")'); background-size: cover; background-position: center;">
+	<center>
+		<div class="pt-3 pe-5">
+			<br /> <br /> <br /> <br />
+			<br /> <br /> <br /> <br />
+			<br /> <br /> <br /> <br />
+			<br /> <br /> <br /> <br />
+
+			<a class="custom-font" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+				Proyecto Biblioteca
+			</a>
+		</div>
+	</center>
+
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasExampleLabel">Proyecto Final PA-II</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="">
+						<p class="fw-bold fs-3">¿A donde quieres ir?</p>
+					</div>
+					<nav class="navbar bg-body-tertiary">
+						<div class="container-fluid">
+							<ul class="" style="">
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Autor" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-person-badge d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Autores
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Libros" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-book-half d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Libros
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Clientes" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-person-lines-fill d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Clientes
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Editorial" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-alipay d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Editoriales
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Prestamos" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-check-square d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Prestamos
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Devoluciones" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-arrow-bar-left d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Devoluciones
+										</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+</body>

@@ -1,0 +1,45 @@
+﻿@model ProyectoFinalPAII.Models.Libros
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Seguro de eliminar?</h3>
+<div>
+    <h4>Libros</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre de Libro:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LibrosName)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha de lanzamiento:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaLanzamiento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Autor.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Editorial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Editorial.EditorialName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="LibrosId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+       <a class="btn btn-success" asp-action="Index">Volver</a>
+    </form>
+</div>

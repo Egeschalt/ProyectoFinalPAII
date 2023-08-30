@@ -1,0 +1,45 @@
+﻿@model ProyectoFinalPAII.Models.Prestamos
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Prestamos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PrestamosId" />
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibroId" class="control-label"></label>
+                <select asp-for="LibroId" class="form-control" asp-items="ViewBag.LibroId"></select>
+                <span asp-validation-for="LibroId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaPrestamo" class="control-label"></label>
+                <input asp-for="FechaPrestamo" class="form-control" />
+                <span asp-validation-for="FechaPrestamo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a class="btn btn-success" asp-action="Index">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

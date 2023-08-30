@@ -1,0 +1,106 @@
+﻿@model ProyectoFinalPAII.Models.Devoluciones
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Devoluciones</h4>
+<div class="container-fluid">
+	<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+		Menú
+	</a>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Proyecto Final PA-II</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<div class="">
+			<p class="fw-bold fs-3">¿A donde quieres ir?</p>
+		</div>
+		<nav class="navbar bg-body-tertiary">
+			<div class="container-fluid">
+				<ul class="" style="">
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Autor" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-person-badge d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Autores
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Libros" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-book-half d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Libros
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-person-lines-fill d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Clientes
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Editorial" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-alipay d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Editoriales
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Prestamos" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-check-square d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Prestamos
+							</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Devoluciones" asp-action="Index">
+							<p class="fw-ligh fs-5">
+								<i class="bi bi-arrow-bar-left d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+								Devoluciones
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PrestamoId" class="control-label"></label>
+                <select asp-for="PrestamoId" class ="form-control" asp-items="ViewBag.PrestamoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaDevolucion" class="control-label"></label>
+                <input asp-for="FechaDevolucion" class="form-control" />
+                <span asp-validation-for="FechaDevolucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

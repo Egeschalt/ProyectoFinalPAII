@@ -1,0 +1,120 @@
+﻿@model IEnumerable<ProyectoFinalPAII.Models.Editorial>
+
+@{
+    ViewData["Title"] = "Editorial";
+}
+
+	<p class="fst-italic fs-1">Editorial</p>
+
+	<form class="d-flex m-4" role="search" data-dashlane-rid="4dc74705aec3c008" data-form-type="">
+		<div class="col-5">
+			<a class="btn btn-outline-success" data-dashlane-label="true" data-dashlane-rid="2a0586c9febb350c" data-form-type="" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+				Menú
+			</a>
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasExampleLabel">Proyecto Final PA-II</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="">
+						<p class="fw-bold fs-3">¿A donde quieres ir?</p>
+					</div>
+					<nav class="navbar bg-body-tertiary">
+						<div class="container-fluid">
+							<ul class="" style="">
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Autor" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-person-badge d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Autores
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Libros" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-book-half d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Libros
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Clientes" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-person-lines-fill d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Clientes
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Editorial" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-alipay d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Editoriales
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Prestamos" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-check-square d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Prestamos
+										</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-dark link-body-emphasis" asp-area="" asp-controller="Devoluciones" asp-action="Index">
+										<p class="fw-ligh fs-5 link-success">
+											<i class="bi bi-arrow-bar-left d-inline-block align-text-top" alt="Logo" width="30" height="24"></i>
+											Devoluciones
+										</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<a asp-action="Create" class="btn btn-outline-success data-dashlane-label="true" data-dashlane-rid="2a0586c9febb350c" data-form-type="">
+				<i class="fa-solid fa-add"></i>&nbsp;Crear
+			</a>
+
+		</div>
+		<form asp-action="Index" method="get">
+			<div class="form-actions no-color">
+				Buscar por nombre:
+				<input placeholder="Nombre" type="text" name="buscaNombre" value="@ViewData["Filtrar"]" />
+				<button type="submit" class="btn btn-outline-success">
+					<i class="fa-solid fa-magnifying-glass"></i>&nbsp; Buscar
+				</button>
+				<a class="btn btn-outline-success" asp-action="Index">
+					<i class="fa-solid fa-rotate-left"></i>&nbsp; Retornar
+				</a>
+			</div>
+		</form>
+	</form>
+<table class="table table-hover table-bordered table-striped">
+	<thead class="text-bg-success p-3">
+        <tr>
+            <th>
+                Nombre de la editorial
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditorialName)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.EditorialId">Editar</a> |
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.EditorialId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.EditorialId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
